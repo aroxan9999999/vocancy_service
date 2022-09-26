@@ -4,7 +4,6 @@
 .iml
 .yaml
 .idea
-.gitignore
 logs
 *.log
 npm-debug.log*
