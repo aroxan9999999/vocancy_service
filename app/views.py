@@ -1,12 +1,14 @@
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render
-from .forms import Authfrom
+from .models import Vocancy
+from .forms import Find_form
 
-class Auth(LoginView):
-    template_name = "login.html"
-    context = {
-        "form": Authfrom
-    }
 
-def home(request):
-    return render(request, "login.html", {"form": Authfrom})
+def __vocancy(request) -> Vocancy:
+    find_form = Find_form()
+    if request.method == "GET":
+        vocancy_object = Vocancy.objects.all()
+        return render(request, template_name="home.html", context={"vocancy": vocancy_object, "find_form": find_form})
+
+
+

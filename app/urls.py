@@ -1,7 +1,8 @@
 from django.urls import path, include
-from .views import Auth, home
+from .views import __vocancy
+
 
 urlpatterns = [
-    path(" ", Auth.as_view()),
-    path("home", home),
+    path("", __vocancy),
 ]
+

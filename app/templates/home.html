@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <form action="" method="get">
+            <div class="form-group">
+            {{ find_form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">поиск</button>
+        </form>
+
+{% for i in vocancy %}
+  <div class="card-body">
+    <h5 class="card-title"><a href="{{ i.url }}">{{ i.title }}</a></h5>
+    <p class="card-text">{{ i.description }}</p>
+        <style>
+          .card-text {
+          color: #4135dc;
+          }
+        </style>
+      <p class="card-text">{{ i.city.name }} | {{ i.language.name }} | {{ i.timer }}</p>
+      </div>
+        {% empty %}
+            <h3>  К сожлению ничего не найдено</h3>
+            <style>
+                h3 {
+                    color: red;
+                }
+            </style>
+      {% endfor %}
+
+{% endblock %}
+
+
