@@ -1,0 +1,120 @@
+body {
+  background: linear-gradient(45deg, #a8edea, #fed6e3) no-repeat center/cover;
+  min-height: 700px;
+}
+
+.vocancy__section {
+  min-width: 200px;
+  width: 700px;
+  height: 200px;
+  margin: 10px auto;
+  background: -webkit-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+  background: -moz-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+  background: linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+  opacity: 0.9;
+  border-radius: 33px;
+  text-align: left;
+  -webkit-box-shadow: -9px 11px 76px 38px rgba(0, 255, 97, 0.49);
+  -moz-box-shadow: -9px 11px 76px 38px rgba(0, 255, 97, 0.49);
+  box-shadow: -9px 11px 76px 38px rgba(0, 255, 97, 0.49);
+}
+
+.vocancy__section h3 {
+  color: #ff1100 #00ffc3;
+  text-shadow: 1px 1px 1px #fb0071f2, 0 0 35px #c300fff2, 0 0 50px #ff1100f2;
+  margin: 0px auto;
+  text-align: center;
+  font-weight: bolder;
+  inline-size: 600px;
+}
+
+.vocancy__section a {
+  text-decoration: none;
+ }
+
+
+.vocancy__section p {
+  padding: 0px 10px;
+}
+
+section {
+  min-width: 1000px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 65px;
+}
+
+section .circle {
+  height: 35px;
+  width: 35px;
+  margin: 35px 0 0 10px;
+  background: -webkit-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+  background: -moz-linear-gradient(45deg, #e8f0ee 39%, #00ff26 98%);
+  background: linear-gradient(45deg, #fff2f2 39%, #e105e5 98%);
+  opacity: 0.7;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+section .circle h3 {
+  position: absolute;
+  text-align: center;
+  margin: 7px 10px auto;
+}
+
+section .active {
+  background: linear-gradient(to right, #e03f57, #14aad7, cyan);
+}
+
+section .go {
+  background: linear-gradient(to right, #827171, #2ecad8, cyan);
+  opacity: 1;
+}
+
+section .go h3 {
+  text-align: center;
+}
+
+
+.circle:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 30%;
+    border-bottom: 10;
+    padding-bottom: .5em;
+    text-decoration: none;
+  }
+
+select {
+  width: 200px;
+  height: 100;
+  margin-left: center;
+  text-align: center;
+  display: inline-block;
+}
+
+form p{
+    margin-left: 500px;
+}
+
+form p select{
+    height: 50px;
+    width: 250px;
+    background: -webkit-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+    background: -moz-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+    background: linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+    opacity: 0.9;
+}
+
+#id_city_name{
+    margin-left: 64px;
+}
+
+form .btn-primary{
+    margin-left: 687px;
+    background: -webkit-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+    background: -moz-linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+    background: linear-gradient(45deg, #e8f0ee 39%, #00ff8e 98%);
+}

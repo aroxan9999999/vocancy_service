@@ -1,6 +1,6 @@
 from django.db import models
 from app.scripts import translite
-import jsonfield
+
 
 
 class City(models.Model):
@@ -56,7 +56,7 @@ class Vocancy(models.Model):
 
 class Error(models.Model):
     time = models.DateField(auto_now_add=True)
-    errors = jsonfield.JSONField()
+
 
 
 

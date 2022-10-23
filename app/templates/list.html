@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for i in page_obj %}
+  <div class=vocancy__section>
+    <h3><a href="{{ i.url }}">{{ i.title }}</a></h3>
+    <p>{{ i.description }}</p>
+  </div>
+        {% empty %}
+            <h3>  К сожлению ничего не найдено</h3>
+{% endfor %}
+
+
+    {% if page_obj %}
+       <section>
+           {% if page_obj.number > 1 %}
+                <a href="?language_name={{ language }}{% if city %}&city_name={{city}}{% endif %}&page={{ page_obj.previous_page_number }}">
+                   <div class="circle go">
+                       <h3>⇜</h3>
+                   </div>
+               </a>
+           {% endif %}
+
+           {% for key, value in navigator.items %}
+               {% if key == page_obj.number %}
+                   {% for obj in value %}
+                        {% if obj == page_obj.number %}
+                           <a href="?language_name={{ language }}{% if city %}&city_name={{city}}{% endif %}&page={{obj}}">
+                               <div class="circle active">
+                                      <h3>{{ obj }}</h3>
+                               </div>
+                           </a>
+                        {% else %}
+                            <a href='?language_name={{ language }}{% if city %}&city_name={{city}}{% endif %}&page={{obj}}'>
+                               <div class="circle">
+                                      <h3>{{ obj }}</h3>
+                               </div>
+                           </a>
+                       {% endif %}
+                       {% endfor %}
+               {% endif %}
+           {% endfor %}
+
+           {% if page_obj.has_next %}
+               <a href="?language_name={{ language }}{% if city %}&city_name={{city}}{% endif %}&page={{ page_obj.next_page_number }}">
+                   <div class="circle go">
+                       <h3>➺</h3>
+                   </div>
+               </a>
+           {% endif %}
+       </section>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+

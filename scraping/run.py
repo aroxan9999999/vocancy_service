@@ -11,14 +11,18 @@ django.setup()
 from app.models import *
 
 
+
 def get_vocancy() -> Vocancy:
     with open("hh.json", "r", encoding="utf-8") as file:
         language: Language = Language.objects.get(name="python")
-        city: City = City.objects.get(name="python")
+        city: City = City.objects.get(name="london")
         obj = json.load(file)
         for i in obj:
-            v = Vocancy(**i, language=language)
-            v.save()
+            try:
+                v = Vocancy(**i, language=language, city=city)
+                v.save()
+            except Exception:
+                continue
             print(v)
 
         
@@ -29,5 +33,5 @@ def get_vocancy() -> Vocancy:
 
 
 
-# main_hh()
 get_vocancy()
+

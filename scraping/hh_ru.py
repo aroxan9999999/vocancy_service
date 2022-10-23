@@ -76,8 +76,5 @@ print(end)
 
 
 
-#for i in range(1, 100):
-#    url = f"https://hh.ru/search/vacancy?text=&area=1&page={i}"
-#    main_hh()
-#
+
 
