@@ -3,8 +3,8 @@
 {% block content %}
 
 {% for i in page_obj %}
-  <div class=vocancy__section>
-    <h3><a href="{{ i.url }}">{{ i.title }}</a></h3>
+  <div class="vocancy__section">
+    <h3><a href="{{ i.url }}" target="_blank">>{{ i.title }}</a></h3>
     <p>{{ i.description }}</p>
   </div>
         {% empty %}
@@ -16,7 +16,7 @@
        <section>
            {% if page_obj.number > 1 %}
                 <a href="?language_name={{ language }}{% if city %}&city_name={{city}}{% endif %}&page={{ page_obj.previous_page_number }}">
-                   <div class="circle go">
+                   <div class="circle go ">
                        <h3>⇜</h3>
                    </div>
                </a>

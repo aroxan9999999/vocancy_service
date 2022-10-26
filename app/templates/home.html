@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block form %}
-     <form action="{% url 'list'%}" method="get">
+     <form class="gradient" action="{% url 'list'%}" method="get">
         {{ find_form.as_p }}
         <button type="submit" class="btn btn-primary">поиск</button>
     </form>
