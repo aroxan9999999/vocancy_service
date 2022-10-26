@@ -16,9 +16,25 @@ class Userloginform(forms.Form):
             src = MyUser.objects.filter(email=email)
             if not src:
                 raise forms.ValidationError("Ползватель не сушествует")
-            if not  check_password(password, src[0].password):
+            if not check_password(password, src[0].password):
                 raise forms.ValidationError("пароль не верный")
             user = authenticate(email=email, password=password)
             if not user:
                 forms.ValidationError("пользватель заблокирован")
         return super(Userloginform, self).clean(*args, **kwargs)
+
+class Userregistrationform(forms.ModelForm):
+    email = forms.CharField(max_length=50, widget=forms.EmailInput)
+    password = forms.CharField(max_length=50, widget=forms.PasswordInput)
+    password2 = forms.CharField(max_length=50, widget=forms.PasswordInput, label="Password-rpeat")
+
+    class Meta:
+        model = MyUser
+        fields = ("email",)
+
+    def clean_password2(self):
+        data = self.cleaned_data
+        if data["password"] != data["password2"]:
+            raise forms.ValidationError("пароли не совпадают")
+        return data["password2"]
+

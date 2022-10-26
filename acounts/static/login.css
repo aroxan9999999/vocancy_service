@@ -16,6 +16,10 @@ form p input{
   width: 250px;
   margin-left: 107px;
   margin-top: -10px;
+  background: -webkit-linear-gradient(45deg, #1f721b 39%, #00ff8e 98%);
+  background: -moz-linear-gradient(45deg, #457876 39%, #00ff8e 98%);
+  background: linear-gradient(45deg, #4a7b77 39%, #00ff8e 98%);
+  opacity: 0.9;
 }
 
 form .btn-primary:hover {
@@ -50,7 +54,7 @@ form button:hover{
 
 ul{
     text-align: center;
-    margin-right: 57px;
+    margin-right: 47px;
     list-style-type: none;
     color: red;
     font-size: 25px

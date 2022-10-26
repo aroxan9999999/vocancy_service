@@ -22,14 +22,24 @@
             <a href="{% url 'acounts:logout' %}">выйтти</a>
             {% else %}
             <a href="{% url 'acounts:login' %}">войти</a>
-            <a href="">зарегистрироваться</a>
+            <a href="{% url 'acounts:register' %}">зарегистрироваться</a>
             {% endif %}
         </div>
 
     </nav>
-         {% block login %}
 
-         {% endblock %}
+          {% block register %}
+
+          {% endblock %}
+
+          {% block register_done %}
+
+          {% endblock %}
+
+
+          {% block login %}
+
+          {% endblock %}
 
 
           {% block nav %}

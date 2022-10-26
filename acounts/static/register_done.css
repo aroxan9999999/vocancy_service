@@ -1,0 +1,9 @@
+h3 {
+  color: #ff1100 #00ffc3;
+  text-shadow: 1px 1px 1px #fb0071f2, 0 0 35px #c300fff2, 0 0 50px #ff1100f2;
+  margin: auto;
+  margin-top: 22px;
+  text-align: center;
+  font-weight: bolder;
+  inline-size: 600px;
+}

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="747f5a6e-9210-4e83-9126-0fb3a7c60040" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/acounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/acounts/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/static/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/acounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/acounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/app/vocancy.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/app/vocancy.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
