@@ -15,8 +15,8 @@ def __vocancy(request) -> Vocancy:
 
 
 def _listwiew(request):
-    language = request.GET.get("language_name")
-    city = request.GET.get("city_name")
+    language = request.GET.get("language_name" or None)
+    city = request.GET.get("city_name" or None)
     _fillter = {key: value for key, value in {"language__name": language, "city__name": city}.items() if value}
     vocancy_object = Vocancy.objects.filter(**_fillter)
     paginator = Paginator(vocancy_object, 10)

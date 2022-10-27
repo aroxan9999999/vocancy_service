@@ -1,0 +1,13 @@
+
+
+form p:last-child {
+  display: inline-block;
+  padding-right: 0px;
+}
+
+form p input {
+    margin-left: 3px;
+    background-color; green;
+    height: 28px;
+    width: 28px;
+}

@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.hashers import check_password
 
+from app.models import City, Language
 from .models import MyUser
 
 class Userloginform(forms.Form):
@@ -38,3 +39,20 @@ class Userregistrationform(forms.ModelForm):
             raise forms.ValidationError("пароли не совпадают")
         return data["password2"]
 
+
+class Userupdateform(forms.Form):
+    language_name = forms.ModelChoiceField(queryset=Language.objects.all(),
+                                           required=True,
+                                           label="Специальность",
+                                           to_field_name="name")
+
+    city_name = forms.ModelChoiceField(queryset=City.objects.all(),
+                                       required=False,
+                                       label="Город",
+                                       to_field_name="name")
+
+    to_mail = forms.BooleanField(required=False, widget=forms.CheckboxInput, label="получить расылку")
+
+    class Meta:
+        model = MyUser
+        fields = ("city_name", "language_name", "to_mail")

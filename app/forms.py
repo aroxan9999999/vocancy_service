@@ -7,7 +7,7 @@ from . models import City, Language
 class Find_form(forms.Form):
     language_name = forms.ModelChoiceField(queryset=Language.objects.all(),
                                            widget=forms.Select(attrs={"class": "form-control"}),
-                                           required=False,
+                                           required=True,
                                            label="Специальность",
                                            to_field_name="name")
     city_name = forms.ModelChoiceField(queryset=City.objects.all(),
