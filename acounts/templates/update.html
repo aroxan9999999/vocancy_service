@@ -10,6 +10,12 @@
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <button type="submit">сохранить</button>
+</form>
+
+<form class="delete__user" action="{% url 'acounts:delete' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">удалить</button>
 </form>
 {% endblock %}
 	

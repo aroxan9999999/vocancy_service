@@ -1,13 +1,35 @@
 
 
+
+form p select{
+  position: absolute;
+  justify-content: center;
+  margin-left: 121px;
+}
+
 form p:last-child {
   display: inline-block;
   padding-right: 0px;
 }
 
 form p input {
-    margin-left: 3px;
+    margin-left: 130px;
     background-color; green;
-    height: 28px;
-    width: 28px;
+    height: 23px;
+    width: 23px;
+    margin-top: 1px;
+}
+
+.delete__user button{
+    height: 27px;
+    width: 79px
+}
+.delete__user{
+    margin-top: 7px;
+}
+
+.delete__user button:hover{
+    background: -webkit-linear-gradient(45deg, #e10c0c 39%, #8c1717 98%);
+    background: -moz-linear-gradient(45deg, #e71111 39%, #6c2323 98%);
+    background: linear-gradient(45deg, #f10a0a 39%, #a52153 98%)
 }
