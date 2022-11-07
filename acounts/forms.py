@@ -41,12 +41,12 @@ class Userregistrationform(forms.ModelForm):
 
 
 class Userupdateform(forms.Form):
-    language_name = forms.ModelChoiceField(queryset=Language.objects.all(),
+    language = forms.ModelChoiceField(queryset=Language.objects.all(),
                                            required=True,
                                            label="Специальность",
                                            to_field_name="name")
 
-    city_name = forms.ModelChoiceField(queryset=City.objects.all(),
+    city = forms.ModelChoiceField(queryset=City.objects.all(),
                                        required=False,
                                        label="Город",
                                        to_field_name="name")

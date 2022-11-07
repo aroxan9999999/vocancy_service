@@ -5,10 +5,14 @@
 {% for i in page_obj %}
   <div class="vocancy__section">
     <h3><a href="{{ i.url }}" target="_blank">>{{ i.title }}</a></h3>
-    <p>{{ i.description }}</p>
+    <p class="text">{{ i.description }}</p>
+      <p>{{ i.city }}</p>
+      <p>{{ i.company }}</p>
+      <h5 class="timer">{{ i.timer|date:"SHORT_DATE_FORMAT" }}</h5>
   </div>
         {% empty %}
             <h3>  К сожлению ничего не найдено</h3>
+
 {% endfor %}
 
 

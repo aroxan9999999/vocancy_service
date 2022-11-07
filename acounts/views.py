@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.shortcuts import render, redirect
-from .forms import Userloginform, Userregistrationform, Userupdateform
+from acounts.forms import Userloginform, Userregistrationform, Userupdateform
 from django.contrib import messages
 
 User = get_user_model()

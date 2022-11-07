@@ -1,8 +1,5 @@
-from django.contrib.auth.views import LoginView
 from django.shortcuts import render
-from django.views.generic import ListView
 from django.core.paginator import Paginator
-
 from .models import Vocancy
 from .forms import Find_form
 
@@ -10,8 +7,6 @@ from .forms import Find_form
 def __vocancy(request) -> Vocancy:
     find_form = Find_form()
     return render(request, template_name="home.html", context={"find_form": find_form})
-
-
 
 
 def _listwiew(request):
@@ -25,8 +20,8 @@ def _listwiew(request):
     count = len(vocancy_object) // 10
     count +=1 if count %10 != 0 else 0
     navigator = {
-        key: sorted(range(key + 5 if key >= 5 and key % 5 == 0 and key + 5 <= count and key > 1 else key
-        if key not in range(count - 5, count + 1) else key - 3,
+        key: sorted(range(key + 5 if key >= 5 and key % 5 == 0 and key + 5 <= count and key > 1 else key -3
+        if key not in range(count - 5, count + 1) and key not in range(0, 4) else key,
                           (key + 5 if key % 5 != 0 and key + 5 < count else key - 5
                           if key not in range(count - 5, count+1) else key + abs(key - count) + 1),
                           1 if key % 5 != 0 or key in range(count - 5, count+1) else -1))

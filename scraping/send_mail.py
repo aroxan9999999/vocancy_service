@@ -1,25 +1,24 @@
 import os
 import sys
-
 from django.contrib.auth import get_user_model
-
+from scraping.module.functions import html_send_file
 
 proj = os.path.dirname(os.path.abspath("manage.py"))
 sys.path.append(proj)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
-
 import django
 django.setup()
-from django.template import Context, Template
 from app.models import Vocancy
 import smtplib
-import os
 from email.mime.text import MIMEText
+from django.db.models import Q
 from dotenv import load_dotenv
 load_dotenv()
 
+
 def __send_email(to):
+    print(to)
     sender = "aroxan.999@gmail.com"
     # your password = "your password"
     password = "rxfmntgwvyfwnmdx"
@@ -28,9 +27,9 @@ def __send_email(to):
     server.starttls()
 
     try:
-        with open("email_template.html") as file:
+        with open("email_template.html", "r", encoding='utf-8') as file:
             template = file.read()
-    except IOError:
+    except Exception:
         return "The template file doesn't found!"
 
     try:
@@ -38,41 +37,63 @@ def __send_email(to):
         msg = MIMEText(template, "html")
         msg["From"] = sender
         msg["To"] = to
-        msg["Subject"] = "С Днем Рождения! Только сегодня скидка по промокоду до 90%!"
+        msg["Subject"] = "Расылка Вокансии"
         server.sendmail(sender, to, msg.as_string())
 
         return "The message was sent successfully!"
     except Exception as _ex:
+        print(to, "ok")
         return f"{_ex}\nCheck your login or password please!"
 
 
-
 User = get_user_model()
-qs = User.objects.filter(to_mail=True).values("email", "language", "city")
-user_dict = {}
-for i in qs:
-    user_dict.setdefault((i["city"],i["language"]), [])
-    user_dict[(i["city"], i["language"])].append(i["email"])
+qs = User.objects.filter(to_mail=True).values("city__name", "language__name", "email")
+if qs:
+    filter_city_language = {"city__name__in": [i.get("city__name") for i in qs], "language__name__in": [i.get("language__name")
+                                                                                            for i in qs]}
+    filter_city = {"city__name__in": [i.get("city__name") for i in qs if None in i.values() and i["city__name"]]}
+    filter_language = {"language__name__in": [i.get("language__name") for i in qs]}
 
-    if user_dict:
-        params = {"city_id__in": [], "language_id__in": []}
-        for pairs in user_dict.keys():
-            print(pairs)
-            params["city_id__in"].append(pairs[0])
-            params["language_id__in"].append(pairs[1])
-            print(params)
-        qs = Vocancy.objects.filter(**params).values()
-        vocancies = dict()
-        for i in qs:
-            vocancies.setdefault((i["city_id"], i["language_id"]), [])
-            vocancies[(i["city_id"], i["language_id"])].append(i)
-        for key, emails in user_dict.items():
-            rows = vocancies.get(key, [])
-
-        html = ""
-        from django.template import Context, Template
-        template = Template("email_template.html")
-        context = Context({"text": rows})
-        template.render(context)
-        for email in emails:
+    vaues_list_city = filter_city_language.get("city__name__in")
+    vocancy_list_language = filter_city_language.get("language__name__in")
+    for i in qs:
+        email = i["email"]
+        if None not in i.values():
+            vocancy = Vocancy.objects.filter(**filter_city_language).order_by('-timer')[:10]
+            if not vocancy:
+                vocancy = Vocancy.objects.filter(Q(language__name__icontains__in=vaues_list_city) |
+                                                 Q(city__name__icontains__in=vaues_list_city)).order_by('-timer')[:10]
+                if not vocancy:
+                    vocancy = Vocancy.objects.all().order_by('-timer')[:10]
+            html_send_file(vocancy)
             __send_email(email)
+        elif None in i.values() and i["city__name"]:
+            vocancy = Vocancy.objects.filter(**filter_city)
+            if not vocancy:
+                vocancy = Vocancy.objects.filter(city__name__icontains__in=vaues_list_city).order_by('-timer')[:10]
+                if not vocancy:
+                    vocancy = Vocancy.objects.all().order_by('-timer')[:10]
+            html_send_file(vocancy)
+            __send_email(email)
+        elif None in i.values() and i["language__name"]:
+            vocancy = Vocancy.objects.filter(**filter_language).order_by('-timer')[:10]
+            if not vocancy:
+                vocancy = Vocancy.objects.filter(language__name__icontains__in=vocancy_list_language).order_by('-timer')[:10]
+                if not vocancy:
+                    vocancy = Vocancy.objects.all().order_by('-timer')[:10]
+            html_send_file(vocancy)
+            __send_email(email)
+        else:
+            vocancy = Vocancy.objects.all().order_by('-timer')[:10]
+            html_send_file(vocancy)
+            __send_email(email)
+
+
+
+
+
+
+
+
+
+
