@@ -4,19 +4,10 @@
     <list default="true" id="747f5a6e-9210-4e83-9126-0fb3a7c60040" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acounts/static/update.css" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/static/update.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/acounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/app/vocancy.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/app/vocancy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/hh.json" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/hh.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/hh_ru.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/hh_ru.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/module/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/module/functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping/send_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/send_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/work_ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/work_ua.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraping/work_ua.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/work_ua.py" afterDir="false" />
     </list>
@@ -81,7 +72,7 @@
       <recent name="D:\L_A\service\vocancy_service\scraping" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__init__">
+  <component name="RunManager" selected="Python.run">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.work_ua" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.functions" />
         <item itemvalue="Python.hh_ru" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.work_ua" />
       </list>
     </recent_temporary>
   </component>

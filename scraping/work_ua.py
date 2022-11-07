@@ -10,12 +10,15 @@ from scraping.module.functions import __, con, __exc, turn, get_url__KomBo
 
 def main_work(response, language, index, domen, __domen, x):
     soup = BeautifulSoup(response.text, "lxml")
-    main_div = soup.find("div", id="pjax-job-list")
-    if main_div:
+    try:
+        main_div = soup.find("div", id="pjax-job-list")
         _list = main_div.find_all("div", class_="job-link")
-        if index > len(con) - 1:
-            turn["index"] = index
-            con.append([language, len(_list), list(), dict(), turn["index"], "work_ua.json"])
+    except Exception:
+        _list = []
+    if index > len(con) - 1:
+        turn["index"] = index
+        con.append([language, len(_list), list(), dict(), turn["index"], "work_ua.json"])
+    if _list:
         for items in _list:
             try:
                 _items = items.find("h2")

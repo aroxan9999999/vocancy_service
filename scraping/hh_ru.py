@@ -12,7 +12,7 @@ def find_vocancy__hh(response, language, index, domen, __domen, x):
     try:
         all_vocancy = soup.find("div", class_="vacancy-serp-content").find_all("div", class_="serp-item")
     except Exception:
-        all_vocancy = None
+        all_vocancy = []
     if index > len(con) - 1:
         turn["index"] = index
         con.append([language, len(all_vocancy), list(), dict(), turn["index"], "hh.json"])

@@ -21,15 +21,15 @@ __vocancy_dict__hh = {}
 __vocancy_dict__wk = {}
 for index in range(language.count()):
     _language = language[index].name
-    for page in range(10):
+    for page in range(50):
         get_url__KomBo(find_vocancy__hh, "https://hh.ru", "/search/vacancy?text=", language=_language, x="&", page=page, index=index, __domen="https://hh.ru")
 __result_hh = __(_return=True)
 
 
 for index in range(language.count()):
     _language = language[index].name
-    for page in range(10):
-        get_url__KomBo(main_work, "https://www.work.ua/ru/", "jobs-", language=_language, x="/?", page=page, index=index+10, __domen='https://www.work.ua')
+    for page in range(50):
+        get_url__KomBo(main_work, "https://www.work.ua/ru/", "jobs-", language=_language, x="/?", page=page, index=index + 50, __domen='https://www.work.ua')
 __result_wk = __(_return=True)
 
 def get_vocancy() -> Vocancy:
@@ -62,8 +62,6 @@ def get_vocancy() -> Vocancy:
                         v.save()
                     except Exception as exc:
                         continue
-
-
 
 
 get_vocancy()

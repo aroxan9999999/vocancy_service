@@ -25,7 +25,7 @@ def __(key=None, value=None, end=None, constant=con, delpth=5, _path=None, _retu
         try:
             file_path = _path if _path else constant[turn["index"]][-1]
             with open(file_path, "w", encoding="utf-8") as file:
-                dump_list = [i for i in constant if i[-1] == file_path]
+                dump_list = [i[2] for i in constant if i[-1] == file_path and i[2]]
                 json.dump(dump_list, file, indent=4, ensure_ascii=False)
                 result = dump_list
                 print(result)
@@ -43,6 +43,7 @@ def __exc(url, headers, path="errors.json"):
         if response.status_code != 200:
             __(path=path, key="errors", end=1, delpth=1, title=url, content="сайт не отвечает",
                stats_code=response.status_code)
+
     except Exception as exc:
         __(path=path, key="errors", end=1, delpth=1, title=url, content="сайт не отвечает")
         response = None
@@ -60,6 +61,7 @@ def get_url__KomBo(func, domen_serch, text, language, city="", page=0, index=Non
     response = __exc(url, headers)
     if response:
         func(response, language, index, domen, __domen, x)
+
 
 
 def html_send_file(context, template_name="email_template.html"):
